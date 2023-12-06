@@ -30,21 +30,122 @@ Nested serializerdan biz foydalanmiz qachonki, bizga biror object ichida boshqa 
 
 
 
-<img src="https://e1.pxfuel.com/desktop-wallpaper/238/532/desktop-wallpaper-python-logo-white-silk-texture-python-emblem-programming-language-python-silk-backgrounds-with-resolution-3840x2400-high-quality-python-logo.jpg" alt="Some programming languages logos">
+<img src="https://i.stack.imgur.com/FW9Qe.png" alt="Some programming languages logos">
 </p>
 
-* npm
+### models.py fayliga 2 taqo'yidagicha modulyaratamiz
+* models.py
   ```sh
-  from django.db import models
-
-# Create your models here.
-
-
-
-class Category(models.Model):
-    title=models.CharField(max_length=50)
-
-class Ads(models.Model):
-    category=models.ForeignKey(Category,on_delete=models.CASCADE,related_name='category')
-    title=models.CharField(max_length=40)
+    from django.db import models
+    
+    class Category(models.Model):
+        title=models.CharField(max_length=50)
+    
+    class Ads(models.Model):
+        category=models.ForeignKey(Category,on_delete=models.CASCADE,related_name='category')
+        title=models.CharField(max_length=40)
   ```
+
+### yaratga appimizdi settings.py fayliga qo'shib bazani makemigrations va migrate qilamiz
+* create baza
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+
+### serializer.py nomli fayl yaratamiz
+* serializer.py
+
+```sh
+from .models import Ads,Category
+from rest_framework import serializers
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Category
+        fields='__all__'
+
+class AdsSerializer(serializers.ModelSerializer):
+    category=CategorySerializer()   # nested serializer 
+
+    class Meta:
+        model=Ads
+        fields='__all__'
+```
+
+  yuqoridagi codenning modile.py fayliga etibor bering, Catgory nomlli modulni Ads nomli modulga ForiegnKey fields sifatida category o'zgaruvchisagi saqlaganmiz, shu qaysidir catrgorygategishli barcha objectlarning saqlash yoki ko'rish uchun Nested serializerdan foydalanmiz
+
+
+* views.py
+
+```
+from rest_framework.viewsets import ModelViewSet
+from .serializer import AdsSerializer
+from .models import Ads
+
+
+class AdsViewSet(ModelViewSet):
+  serializer_class=AdsSerializer
+  ueryset=Ads.objects.all()
+```
+
+### urls.py fayliga viewsni qo'shamiz 
+esltama base urlga appning ichidagi urlni qo'shishni unitmang !!
+
+* app/urls.py
+```
+from django.urls import path
+from .views import AdsViewSet
+
+urlpatterns = [
+    path('category/',AdsViewSet.as_view({'get':'list'}))
+]
+```
+
+ishlating
+```
+python manage.py runserver
+```
+
+
+###NATIJA
+![Alt text]()
+
+
+
+
+  
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
