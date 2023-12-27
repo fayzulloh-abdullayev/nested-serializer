@@ -114,6 +114,7 @@ python manage.py runserver
 <p align="center">
 
 <img src="https://github.com/fayzullohblog/test/blob/main/media/nested/Screenshot%20from%202023-12-06%2020-29-11.png" alt="Some programming languages logos">
+![image](https://github.com/fayzullohblog/test/blob/main/media/nested/Screenshot%20from%202023-12-06%2020-29-11.png" alt="Some programming languages logos)
 </p>
 
 
