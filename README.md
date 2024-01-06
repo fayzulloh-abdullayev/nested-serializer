@@ -117,11 +117,12 @@ python manage.py runserver
 
 </p>
 
+### endi [FOLLOW ](https://github.com/fayzullohblog)  bosing 
 
 
-  
-     
 
+
+[![My Skills](https://skillicons.dev/icons?i=python,django,postgresql,git,aws,html,css)](https://skillicons.dev)
 
 
 
