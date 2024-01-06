@@ -1,29 +1,11 @@
-# NESTED
-
-
-## Nested Serializer haqida
+# Nested Serializer haqida
 
 Nested serializerdan biz foydalanmiz, qachonki bizga biror object ichida boshqa realtion bo'lgan objectning fieldlarini to'ldirishda  yoki ko'rishda foydalanmiz
 
 
 <p align="center">
-    <br>
-    <img src="src/programming-languages.gif" alt="List of programming languages logos">
-    <br>
-    <br>
-    <br>
-    <br>
-    <!-- 
-        Plese don't fix the world 'porgramming' it is not a typo.
-        Well it is a typo but a working typo :) 
-    -->
-    <img src="https://cdn.abranhe.com/projects/porgramming-languages-logos/logo.svg" alt="programming gif">
-    <br>
-    <br>
-   <b>NESTED SERIALIZER</b>
-    <br>
-    <br>
-    <a href="https://languages.abranhe.com"><code>languages.abranhe.com</code></a>
+NESTED SERIALIZER
+
 </p>
 
 <p align="center">
