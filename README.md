@@ -3,7 +3,7 @@
 
 ## Nested Serializer haqida
 
-Nested serializerdan biz foydalanmiz qachonki, bizga biror object ichida boshqa realtion bo'lgan objectning fieldlarini to'ldirishda foyalanamiz
+Nested serializerdan biz foydalanmiz qachonki, bizga biror object ichida boshqa realtion bo'lgan objectning fieldlarini to'ldirishda  yoki ko'rishda foydalanmiz
 
 
 <p align="center">
